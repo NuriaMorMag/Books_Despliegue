@@ -1,0 +1,5 @@
+/home/alumno1/proyecto_despliegue_app_web-main/LibraryDAW/src/main/java/com/daw2/LibraryDAW/LibraryDawApplication.java
+/home/alumno1/proyecto_despliegue_app_web-main/LibraryDAW/src/main/java/com/daw2/LibraryDAW/controller/BookController.java
+/home/alumno1/proyecto_despliegue_app_web-main/LibraryDAW/src/main/java/com/daw2/LibraryDAW/model/Book.java
+/home/alumno1/proyecto_despliegue_app_web-main/LibraryDAW/src/main/java/com/daw2/LibraryDAW/repository/BookRepository.java
+/home/alumno1/proyecto_despliegue_app_web-main/LibraryDAW/src/main/java/com/daw2/LibraryDAW/service/BookService.java

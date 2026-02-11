@@ -11,6 +11,8 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
+	
+	List<Book> findByTitleAndAuthor(String title, String author);
     
     List<Book> findByAuthor(String author);
     
@@ -27,3 +29,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     @Query("SELECT b FROM Book b WHERE LOWER(b.author) LIKE LOWER(CONCAT('%', :author, '%'))")
     List<Book> findBooksByAuthorContainingIgnoreCase(@Param("author") String author);
 }
+
+

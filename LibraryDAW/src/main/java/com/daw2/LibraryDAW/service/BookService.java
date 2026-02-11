@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.daw2.LibraryDAW.model.Book;
 import com.daw2.LibraryDAW.repository.BookRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @Transactional
 public class BookService {
@@ -25,8 +28,21 @@ public class BookService {
         return bookRepository.findById(id);
     }
     
-    public Book createBook(Book book) {
+    /*public Book createBook(Book book) {
         return bookRepository.save(book);
+        
+    }*/
+    
+    public Book createBook(Book book) {
+        List<Book> books = new ArrayList<Book>();
+        books = bookRepository.findByTitleAndAuthor(book.getTitle(), book.getAuthor());
+        
+        if (!books.isEmpty()) {
+            System.out.println("Ya existe un libro con mismo título y autor");
+            return null;
+        } else {
+            return bookRepository.save(book);
+        }
     }
     
     public Book updateBook(Long id, Book bookDetails) {
